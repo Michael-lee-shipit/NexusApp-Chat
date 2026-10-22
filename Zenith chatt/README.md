@@ -87,13 +87,13 @@ For a deployed HTTPS environment, set `COOKIE_HTTPS_ONLY=true` and update `FRONT
 
 ## Render deployment
 
-The repository-root `Procfile` starts the FastAPI application from `Zenith chatt/backend/main.py` using:
+The repository-root `Procfile` changes into the application root and starts the FastAPI application from `backend/main.py` using:
 
 ```text
-uvicorn --app-dir "Zenith chatt" backend.main:app --host 0.0.0.0 --port $PORT
+cd "Zenith chatt" && uvicorn backend.main:app --host 0.0.0.0 --port $PORT
 ```
 
-The `--app-dir` option makes the `backend` package importable while keeping the process working directory at the repository root, where SQLite's default `chat_app.db` path resolves.
+Starting in the application root makes the `backend` package importable and keeps SQLite's default `chat_app.db` path aligned with the app's database file.
 
 ## Troubleshooting
 
