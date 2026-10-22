@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusApp</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="auth-body register-body login-body">
+    <main class="register-layout login-layout">
+      <section
+        class="register-intro login-intro"
+        aria-labelledby="login-welcome"
+      >
+        <a
+          class="register-brand"
+          href="login.html"
+          aria-label="NexusApp sign in"
+        >
+          <span class="logo-badge"
+            ><i class="fa-solid fa-bolt"><b>N</b></i></span
+          >
+          <span>NexusApp</span>
+        </a>
+        <div class="register-intro-copy">
+          <p class="register-eyebrow">YOUR SPACE IS READY</p>
+          <h1 id="login-welcome">Good to see you again.</h1>
+          <p>
+            Sign in to catch up with your rooms and pick up right where the
+            conversation left off.
+          </p>
+        </div>
+        <div class="register-note">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i>
+          <span>Your conversations are waiting.</span>
+        </div>
+      </section>
+
+      <section
+        class="register-form-panel login-form-panel"
+        aria-labelledby="login-title"
+      >
+        <div class="register-form-heading">
+          <p class="register-step">WELCOME BACK <span>NEXUSAPP</span></p>
+          <h2 id="login-title">Sign in to your account</h2>
+          <p>Enter your username or email and password to continue.</p>
+        </div>
+        <form id="login-form" novalidate>
+          <label class="register-label" for="login-identifier"
+            >Username or Email</label
+          >
+          <div class="input-group register-input-group">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            <input
+              type="text"
+              id="login-identifier"
+              name="identifier"
+              placeholder="Username or email address"
+              autocomplete="username"
+              required
+              aria-describedby="login-identifier-hint"
+            />
+          </div>
+          <p class="field-hint" id="login-identifier-hint">
+            Use the username or email address linked to your account.
+          </p>
+
+          <label class="register-label" for="login-password">Password</label>
+          <div class="input-group register-input-group password-field">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            <input
+              type="password"
+              id="login-password"
+              name="current-password"
+              placeholder="Your password"
+              autocomplete="current-password"
+              required
+              aria-describedby="login-password-hint"
+            />
+            <button
+              class="password-toggle"
+              type="button"
+              data-password-toggle="login-password"
+              aria-label="Show password"
+              title="Show password"
+            >
+              <i class="fa-regular fa-eye" aria-hidden="true"></i>
+            </button>
+          </div>
+          <p class="field-hint" id="login-password-hint">
+            Your password is private and never shown to other members.
+          </p>
+
+          <p
+            class="form-feedback"
+            id="login-feedback"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <button type="submit" class="btn-primary register-submit">
+            <span>Sign in</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </form>
+        <div class="social-auth-divider"><span>or continue with</span></div>
+        <div class="social-auth-options" aria-label="Social sign-in options">
+          <button
+            class="social-auth-button"
+            type="button"
+            data-auth-provider="google"
+          >
+            <img src="https://cdn.simpleicons.org/google/4285F4" alt="" />
+            <span>Google</span>
+          </button>
+          <button
+            class="social-auth-button"
+            type="button"
+            data-auth-provider="github"
+          >
+            <img src="https://cdn.simpleicons.org/github/181717" alt="" />
+            <span>GitHub</span>
+          </button>
+          <button
+            class="social-auth-button"
+            type="button"
+            data-auth-provider="x"
+          >
+            <img src="https://cdn.simpleicons.org/x/000000" alt="" />
+            <span> X</span>
+          </button>
+        </div>
+        <p class="switch-text register-switch">
+          New to NexusApp? <a href="register.html">Create an account</a>
+        </p>
+      </section>
+    </main>
+
+    <script src="../app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusApp</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="auth-body register-body">
+    <main class="register-layout">
+      <section class="register-intro" aria-labelledby="register-welcome">
+        <a
+          class="register-brand"
+          href="login.html"
+          aria-label="NexusApp home"
+        >
+          <span class="logo-badge"
+            ><i class="fa-solid fa-bolt"><b>N</b></i></span
+          >
+          <span>NexusApp</span>
+        </a>
+        <div class="register-intro-copy">
+          <p class="register-eyebrow">A better place to talk</p>
+          <h1 id="register-welcome">
+            Your people.<br />One conversation away.
+          </h1>
+          <p>
+            Create your account to join a room, meet your team, and keep the
+            conversation moving.
+          </p>
+        </div>
+        <div class="register-note">
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i
+          ><span>Your password is stored securely.</span>
+        </div>
+      </section>
+
+      <section class="register-form-panel" aria-labelledby="register-title">
+        <div class="register-form-heading">
+          <p class="register-step">GET STARTED <span>01 / 01</span></p>
+          <h2 id="register-title">Create your account</h2>
+          <p>Set up your profile and choose a password to get started.</p>
+        </div>
+        <form id="signup-form" novalidate>
+          <label class="register-label" for="signup-username">Username</label>
+          <div class="input-group register-input-group">
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+            <input
+              type="text"
+              id="signup-username"
+              name="username"
+              placeholder="e.g. alexrivera"
+              autocomplete="username"
+              minlength="3"
+              maxlength="24"
+              required
+              aria-describedby="username-hint"
+            />
+          </div>
+          <p class="field-hint" id="username-hint">
+            3–24 characters. This is how others will know you.
+          </p>
+
+          <label class="register-label" for="signup-email">Email</label>
+          <div class="input-group register-input-group">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <input
+              type="email"
+              id="signup-email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+              aria-describedby="email-hint"
+            />
+          </div>
+          <p class="field-hint" id="email-hint">
+            Use an email address you can access.
+          </p>
+
+          <label class="register-label" for="signup-password">Password</label>
+          <div class="input-group register-input-group password-field">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            <input
+              type="password"
+              id="signup-password"
+              name="new-password"
+              placeholder="Create a password"
+              autocomplete="new-password"
+              required
+              aria-describedby="password-rules"
+            />
+            <button
+              class="password-toggle"
+              type="button"
+              data-password-toggle="signup-password"
+              aria-label="Show password"
+              title="Show password"
+            >
+              <i class="fa-regular fa-eye" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="password-meter" aria-label="Password strength">
+            <span id="password-meter-fill"></span>
+          </div>
+          <ul class="password-rules" id="password-rules">
+            <li data-rule="length">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i> At
+              least 8 characters
+            </li>
+            <li data-rule="variety">
+              <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Mix
+              letters and numbers
+            </li>
+          </ul>
+
+          <label class="register-label" for="signup-confirm-password"
+            >Confirm password</label
+          >
+          <div class="input-group register-input-group password-field">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <input
+              type="password"
+              id="signup-confirm-password"
+              name="confirm-password"
+              placeholder="Enter your password again"
+              autocomplete="new-password"
+              required
+              aria-describedby="password-match"
+            />
+            <button
+              class="password-toggle"
+              type="button"
+              data-password-toggle="signup-confirm-password"
+              aria-label="Show password"
+              title="Show password"
+            >
+              <i class="fa-regular fa-eye" aria-hidden="true"></i>
+            </button>
+          </div>
+          <p
+            class="field-hint password-match"
+            id="password-match"
+            aria-live="polite"
+          >
+            Re-enter your password to confirm it.
+          </p>
+
+          <p
+            class="form-feedback"
+            id="signup-feedback"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <button type="submit" class="btn-primary register-submit">
+            <span>Create account</span
+            ><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </form>
+        <div class="social-auth-divider"><span>or continue with</span></div>
+        <div class="social-auth-options" aria-label="Social sign-up options">
+          <button
+            class="social-auth-button"
+            type="button"
+            data-auth-provider="google"
+          >
+            <img src="https://cdn.simpleicons.org/google/4285F4" alt="" />
+            <span>Google</span>
+          </button>
+          <button
+            class="social-auth-button"
+            type="button"
+            data-auth-provider="github"
+          >
+            <img src="https://cdn.simpleicons.org/github/181717" alt="" />
+            <span>GitHub</span>
+          </button>
+          <button
+            class="social-auth-button"
+            type="button"
+            data-auth-provider="x"
+          >
+            <img src="https://cdn.simpleicons.org/x/000000" alt="" />
+            <span>X</span>
+          </button>
+        </div>
+        <p class="switch-text register-switch">
+          Already part of NexusApp? <a href="login.html">Sign in</a>
+        </p>
+      </section>
+    </main>
+
+    <script src="../app.js"></script>
+  </body>
+</html>

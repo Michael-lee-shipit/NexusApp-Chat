@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+SQLAlchemy
+passlib[bcrypt]
+bcrypt==4.0.1
+Authlib
+email-validator
+httpx
+itsdangerous
+python-dotenv
