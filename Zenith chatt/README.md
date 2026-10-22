@@ -85,6 +85,16 @@ OAuth credentials are optional; username-and-password registration and sign-in d
 
 For a deployed HTTPS environment, set `COOKIE_HTTPS_ONLY=true` and update `FRONTEND_ORIGINS` to include the actual frontend origin.
 
+## Render deployment
+
+The repository-root `Procfile` starts the FastAPI application from `Zenith chatt/backend/main.py` using:
+
+```text
+uvicorn --app-dir "Zenith chatt" backend.main:app --host 0.0.0.0 --port $PORT
+```
+
+The `--app-dir` option makes the `backend` package importable while keeping the process working directory at the repository root, where SQLite's default `chat_app.db` path resolves.
+
 ## Troubleshooting
 
 - **The sign-in or account-creation page cannot connect:** Make sure the API terminal is still running and the backend is listening on port `8000`.
